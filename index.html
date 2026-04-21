@@ -234,6 +234,27 @@
     .profile-card li {
       margin-bottom: 6px;
     }
+    .photo-box {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #f3eee6;
+}
+
+.person-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.photo-caption {
+  margin: 0;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  color: var(--sub);
+  background: #fff;
+}
 
     .section {
       padding: 26px 28px;
@@ -438,9 +459,10 @@
             </div>
 
             <aside class="side-col">
-              <div class="photo-placeholder">
-                人物写真<br />プレースホルダー
-              </div>
+              <div class="photo-box">
+  <img src="kurozaki.png" alt="黒崎恒一郎の写真" class="person-photo" />
+  <p class="photo-caption">地域医療と教育の両面で活動する黒崎恒一郎さん</p>
+</div>
 
               <div class="profile-card">
                 <h3>プロフィール</h3>
