@@ -3,30 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>星浜ローカル・クロニクル｜劇中広報記事｜黒崎恒一郎</title>
   <meta
     name="description"
-    content="星浜ローカル・クロニクルの劇中広報記事。黒崎恒一郎に関する架空の人物紹介記事です。"
+    content="創作作品内に登場する架空の地域広報記事です。黒崎恒一郎という劇中人物を紹介する演出用ページです。"
   />
 
   <style>
     :root {
-      --fiction-header-bg: #eeeeee;
-      --fiction-header-text: #5f6368;
-
       --bg: #f6f1e8;
       --paper: #fffdf8;
-      --paper-deep: #fbf2e6;
-      --text: #2d2a26;
-      --sub: #6d655b;
-      --line: #ddd1bf;
-      --red: #b73434;
-      --red-soft: #fff0f0;
-      --blue: #315f78;
+      --paper-strong: #fff8ee;
+      --text: #2d2924;
+      --sub: #6a6258;
+      --muted: #8a8176;
+      --line: #ded2bf;
+      --line-soft: #ebe0d0;
+      --red: #b83f3a;
+      --red-soft: #fff0ef;
+      --blue: #355f78;
       --blue-soft: #edf5f8;
-      --gold: #c99a47;
-      --ink: #262421;
-      --shadow: rgba(71, 53, 29, 0.1);
+      --gold: #c59a4d;
+      --gold-soft: #fff5dc;
+      --fiction-gray: #eeeeee;
+      --fiction-text: #5f6368;
+      --shadow: 0 18px 44px rgba(71, 53, 29, 0.09);
     }
 
     * {
@@ -39,17 +41,27 @@
 
     body {
       margin: 0;
-      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Yu Gothic UI", sans-serif;
+      font-family:
+        "Hiragino Kaku Gothic ProN",
+        "Yu Gothic",
+        "YuGothic",
+        "Noto Sans JP",
+        sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(201, 154, 71, 0.16), transparent 34%),
-        linear-gradient(180deg, #f2eadc 0%, #fbf8f0 100%);
+        radial-gradient(circle at top left, rgba(197, 154, 77, 0.12), transparent 32%),
+        linear-gradient(180deg, #f4efe5 0%, #fbf8f1 100%);
       line-height: 1.85;
+      letter-spacing: 0.01em;
     }
 
     a {
       color: inherit;
       text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
     }
 
     .fiction-fixed-header {
@@ -59,15 +71,16 @@
       z-index: 9999;
       width: 100%;
       min-height: 34px;
+      padding: 6px 14px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 7px 14px;
-      background: var(--fiction-header-bg);
-      color: var(--fiction-header-text);
+      background: var(--fiction-gray);
+      color: var(--fiction-text);
       border-bottom: 1px solid #d8d8d8;
       font-size: 12px;
       font-weight: 600;
+      line-height: 1.45;
       letter-spacing: 0.02em;
       text-align: center;
     }
@@ -84,11 +97,7 @@
     .site-header {
       background: rgba(255, 253, 248, 0.96);
       border-bottom: 1px solid var(--line);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
-      position: sticky;
-      top: 34px;
-      z-index: 20;
-      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 16px rgba(71, 53, 29, 0.05);
     }
 
     .site-header .container {
@@ -106,22 +115,23 @@
     }
 
     .brand small {
-      color: var(--sub);
-      letter-spacing: 0.16em;
-      font-size: 0.72rem;
-      font-weight: 700;
+      color: var(--muted);
+      letter-spacing: 0.14em;
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
     }
 
     .brand strong {
-      font-size: 1.18rem;
-      color: var(--ink);
+      font-size: 1.16rem;
+      color: var(--red);
       letter-spacing: 0.08em;
-      font-weight: 800;
+      font-weight: 900;
     }
 
     .nav {
       display: flex;
-      gap: 18px;
+      gap: 16px;
       flex-wrap: wrap;
       color: var(--sub);
       font-size: 0.92rem;
@@ -129,64 +139,71 @@
     }
 
     .nav a {
-      padding-bottom: 3px;
+      padding: 4px 0;
       border-bottom: 1px solid transparent;
     }
 
     .nav a:hover {
-      border-color: var(--gold);
-      color: var(--ink);
+      color: var(--red);
+      border-bottom-color: var(--red);
     }
 
     .page {
-      padding: 32px 0 58px;
+      padding: 30px 0 58px;
     }
 
     .article {
-      position: relative;
       background: var(--paper);
       border: 1px solid var(--line);
       border-radius: 22px;
       overflow: hidden;
-      box-shadow: 0 18px 44px var(--shadow);
+      box-shadow: var(--shadow);
     }
 
-    .article::before {
+    .hero {
+      position: relative;
+      padding: 30px 30px 24px;
+      background:
+        linear-gradient(135deg, rgba(184, 63, 58, 0.07), rgba(53, 95, 120, 0.07)),
+        var(--paper);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero::before {
       content: "";
       position: absolute;
       inset: 0;
       pointer-events: none;
       background-image:
-        linear-gradient(rgba(45, 42, 38, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(45, 42, 38, 0.025) 1px, transparent 1px);
-      background-size: 28px 28px;
-      opacity: 0.34;
+        linear-gradient(rgba(197, 154, 77, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(197, 154, 77, 0.06) 1px, transparent 1px);
+      background-size: 26px 26px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3), transparent 72%);
     }
 
-    .hero {
+    .hero-inner {
       position: relative;
-      padding: 30px 30px 22px;
-      background:
-        linear-gradient(135deg, rgba(183, 52, 52, 0.06), rgba(49, 95, 120, 0.07)),
-        var(--paper);
-      border-bottom: 1px solid var(--line);
+      z-index: 1;
     }
 
     .hero-top {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
       margin-bottom: 14px;
     }
 
     .tag {
-      display: inline-block;
-      padding: 6px 12px;
-      background: var(--ink);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 28px;
+      padding: 5px 12px;
+      background: var(--red);
       color: #fff;
       border-radius: 999px;
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       font-weight: 800;
       letter-spacing: 0.06em;
     }
@@ -195,72 +212,83 @@
       background: var(--blue);
     }
 
-    .stage-label {
-      display: inline-flex;
-      align-items: center;
-      width: fit-content;
-      margin: 0 0 10px;
-      color: var(--red);
-      background: var(--red-soft);
-      border: 1px solid #e9b8b8;
-      border-left: 5px solid var(--red);
-      border-radius: 10px;
-      padding: 7px 11px;
-      font-size: 0.94rem;
-      font-weight: 900;
-      letter-spacing: 0.06em;
+    .tag.soft {
+      background: #fff;
+      color: var(--sub);
+      border: 1px solid var(--line);
     }
 
     .hero-title {
       margin: 0;
-      font-size: clamp(1.55rem, 3vw, 2.2rem);
+      font-size: clamp(1.55rem, 3vw, 2.28rem);
       font-weight: 900;
-      color: var(--ink);
-      letter-spacing: 0.05em;
+      color: #2f2922;
+      letter-spacing: 0.055em;
       line-height: 1.35;
     }
 
-    .article-meta {
-      margin: 10px 0 0;
-      color: var(--sub);
-      font-size: 0.9rem;
-      letter-spacing: 0.04em;
+    .stage-label {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      margin: 13px 0 0;
+      padding: 6px 11px;
+      border-radius: 8px;
+      background: var(--red-soft);
+      color: var(--red);
+      border: 1px solid #ecc4c1;
+      font-size: 0.86rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.9fr);
+      grid-template-columns: minmax(0, 1.48fr) minmax(270px, 0.9fr);
       gap: 28px;
       align-items: start;
       margin-top: 20px;
     }
 
     .hero-copy {
-      position: relative;
-      z-index: 1;
+      min-width: 0;
     }
 
     .name-box {
-      background: #fff;
+      position: relative;
+      background: rgba(255, 255, 255, 0.92);
       border: 1px solid var(--line);
       border-left: 7px solid var(--gold);
-      border-radius: 16px;
-      padding: 18px 20px;
+      border-radius: 18px;
+      padding: 20px 22px;
       margin-bottom: 18px;
-      box-shadow: 0 8px 20px rgba(71, 53, 29, 0.05);
+    }
+
+    .name-box::after {
+      content: "LOCAL FEATURE ARCHIVE";
+      position: absolute;
+      right: 18px;
+      bottom: 12px;
+      color: rgba(106, 98, 88, 0.18);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
     }
 
     .name-box h2 {
+      position: relative;
+      z-index: 1;
       margin: 0;
-      font-size: clamp(2rem, 5vw, 3.45rem);
+      font-size: clamp(2rem, 5vw, 3.4rem);
       line-height: 1.15;
       letter-spacing: 0.08em;
       color: var(--red);
-      font-weight: 900;
     }
 
     .name-box p {
-      margin: 6px 0 0;
+      position: relative;
+      z-index: 1;
+      margin: 7px 0 0;
       color: var(--sub);
       font-size: 0.95rem;
       letter-spacing: 0.18em;
@@ -268,10 +296,11 @@
     }
 
     .lead {
+      margin: 0 0 15px;
       font-size: 1.08rem;
       font-weight: 800;
-      color: #51483e;
-      margin: 0 0 14px;
+      color: #51483f;
+      line-height: 1.9;
     }
 
     .hero-copy p,
@@ -281,8 +310,8 @@
     }
 
     .highlight-box {
-      background: #fff8ea;
-      border: 1px solid #ead4a8;
+      background: var(--red-soft);
+      border: 1px solid #efd0cd;
       border-radius: 16px;
       padding: 16px 18px;
       margin: 18px 0;
@@ -293,18 +322,16 @@
     }
 
     .side-col {
-      position: relative;
-      z-index: 1;
       display: grid;
       gap: 16px;
     }
 
     .photo-box {
-      border-radius: 18px;
       overflow: hidden;
+      border-radius: 18px;
       border: 1px solid var(--line);
-      background: #f3eee6;
-      box-shadow: 0 10px 28px rgba(71, 53, 29, 0.08);
+      background: #f4eee5;
+      box-shadow: 0 10px 24px rgba(71, 53, 29, 0.08);
     }
 
     .person-photo {
@@ -312,37 +339,43 @@
       width: 100%;
       aspect-ratio: 4 / 5;
       object-fit: cover;
+      background: #e9e1d5;
+    }
+
+    .photo-meta {
+      background: #fff;
+      border-top: 1px solid var(--line-soft);
+      padding: 11px 12px 13px;
     }
 
     .photo-caption {
-      margin: 0;
-      padding: 10px 12px 4px;
+      margin: 0 0 8px;
       font-size: 0.9rem;
       color: var(--sub);
-      background: #fff;
+      line-height: 1.65;
     }
 
     .asset-tag {
       display: inline-flex;
+      align-items: center;
       width: fit-content;
-      margin: 6px 12px 10px;
-      padding: 4px 8px;
+      min-height: 24px;
+      padding: 3px 9px;
       border-radius: 999px;
-      background: #f1f1f1;
-      color: #5f6368;
-      border: 1px solid #d9d9d9;
+      background: #f0f0f0;
+      color: #686868;
+      border: 1px solid #dddddd;
       font-size: 0.72rem;
       font-weight: 800;
       letter-spacing: 0.04em;
     }
 
     .photo-fiction-note {
-      margin: 0;
-      padding: 11px 12px 13px;
-      border-top: 1px solid #eee3d5;
-      background: #fffaf2;
-      color: #665d53;
-      font-size: 0.82rem;
+      margin: 10px 0 0;
+      padding-top: 10px;
+      border-top: 1px dashed #ddd1bf;
+      color: #686159;
+      font-size: 0.78rem;
       line-height: 1.75;
     }
 
@@ -355,26 +388,31 @@
 
     .profile-card h3 {
       margin: 0 0 12px;
-      font-size: 1.18rem;
+      font-size: 1.12rem;
       color: var(--blue);
-      font-weight: 900;
+      letter-spacing: 0.05em;
     }
 
     .profile-card ul {
-      margin: 0 0 10px;
-      padding-left: 1.1em;
+      margin: 0 0 11px;
+      padding-left: 1.15em;
     }
 
     .profile-card li {
       margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    .profile-card p {
+      margin: 0;
+      color: #4f5960;
+      font-size: 0.94rem;
+      line-height: 1.85;
     }
 
     .section {
-      position: relative;
-      z-index: 1;
       padding: 28px 30px;
       border-top: 1px solid var(--line);
-      background: rgba(255, 253, 248, 0.8);
     }
 
     .section-title {
@@ -382,13 +420,28 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 8px 14px;
-      background: #fff6df;
+      padding: 8px 15px;
+      background: var(--gold-soft);
       border-left: 6px solid var(--gold);
       border-radius: 999px;
-      font-size: 1.16rem;
+      font-size: 1.14rem;
       font-weight: 900;
       color: #5f4c2d;
+      letter-spacing: 0.04em;
+    }
+
+    .section-note-label {
+      display: inline-flex;
+      width: fit-content;
+      margin: 0 0 16px;
+      padding: 5px 10px;
+      border-radius: 7px;
+      color: var(--red);
+      background: var(--red-soft);
+      border: 1px solid #edc6c4;
+      font-size: 0.82rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
     }
 
     .qa-list {
@@ -397,11 +450,10 @@
     }
 
     .qa-item {
+      overflow: hidden;
       border: 1px solid var(--line);
       border-radius: 18px;
-      overflow: hidden;
       background: #fff;
-      box-shadow: 0 8px 20px rgba(71, 53, 29, 0.04);
     }
 
     .qa-q {
@@ -410,43 +462,67 @@
       font-weight: 900;
       color: var(--blue);
       font-size: 1.02rem;
+      line-height: 1.75;
     }
 
     .qa-a {
       padding: 14px 16px 16px;
       font-size: 1rem;
+      line-height: 1.9;
+    }
+
+    .closing-note {
+      background: linear-gradient(180deg, #fff8ec 0%, #f8efdf 100%);
+    }
+
+    .fiction-card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.82);
+      padding: 18px 20px;
+      color: #5c554d;
+      font-size: 0.92rem;
+      line-height: 1.9;
+    }
+
+    .fiction-card strong {
+      color: var(--red);
     }
 
     .footer {
       padding: 20px 0 38px;
       color: var(--sub);
-      font-size: 0.86rem;
+      font-size: 0.84rem;
     }
 
-    .footer .container {
+    .footer-inner {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 10px;
+      gap: 9px;
       text-align: center;
-    }
-
-    .fiction-note {
-      max-width: 860px;
-      font-size: 0.94rem;
-      line-height: 1.9;
-      color: #5c554d;
     }
 
     .footer-brand {
       font-weight: 800;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.05em;
+    }
+
+    .fiction-note {
+      max-width: 860px;
+      font-size: 0.84rem;
+      line-height: 1.85;
+      color: #665f57;
     }
 
     @media (max-width: 900px) {
       .hero-grid {
         grid-template-columns: 1fr;
+      }
+
+      .side-col {
+        max-width: 520px;
       }
     }
 
@@ -454,15 +530,11 @@
       .fiction-fixed-header {
         min-height: 38px;
         font-size: 11px;
-        padding: 7px 10px;
+        padding: 6px 10px;
       }
 
       .site-wrap {
         padding-top: 38px;
-      }
-
-      .site-header {
-        top: 38px;
       }
 
       .site-header .container {
@@ -472,14 +544,30 @@
       }
 
       .nav {
-        gap: 14px;
+        gap: 12px;
         font-size: 0.86rem;
+      }
+
+      .page {
+        padding: 18px 0 44px;
       }
 
       .hero,
       .section {
         padding-left: 18px;
         padding-right: 18px;
+      }
+
+      .article {
+        border-radius: 18px;
+      }
+
+      .name-box {
+        padding: 18px;
+      }
+
+      .name-box::after {
+        display: none;
       }
 
       .name-box h2 {
@@ -491,20 +579,21 @@
 
 <body>
   <div class="fiction-fixed-header">
-    このページは創作作品上の架空広報記事です。実在の人物・団体・地域広報とは関係ありません。
+    このページは創作作品上の架空広報記事です。実在の人物・団体・地域広報・医療機関・教育機関とは関係ありません。
   </div>
 
   <div class="site-wrap">
     <header class="site-header">
       <div class="container">
         <div class="brand">
-          <small>HOSIHAMA LOCAL CHRONICLE</small>
+          <small>HOSHIHAMA LOCAL CHRONICLE</small>
           <strong>星浜ローカル・クロニクル</strong>
         </div>
 
         <nav class="nav" aria-label="ページ内ナビゲーション">
           <a href="#feature">特集</a>
-          <a href="#interview">Q&amp;A</a>
+          <a href="#interview">Q&A</a>
+          <a href="#notice">注記</a>
         </nav>
       </div>
     </header>
@@ -513,89 +602,95 @@
       <div class="container">
         <article class="article" id="feature">
           <section class="hero">
-            <div class="hero-top">
-              <span class="tag">地域人物ファイル</span>
-              <span class="tag sub">物語内アーカイブ</span>
-            </div>
-
-            <p class="stage-label">劇中広報記事</p>
-
-            <h1 class="hero-title">星浜エリア人物記録　第1回</h1>
-            <p class="article-meta">
-              Fictional Feature Archive / Public Relations Article
-            </p>
-
-            <div class="hero-grid">
-              <div class="hero-copy">
-                <div class="name-box">
-                  <h2>黒崎恒一郎</h2>
-                  <p>くろさき こういちろう</p>
-                </div>
-
-                <p class="lead">
-                  地域医療と教育、二つの分野で星浜エリアを支える人物として知られる黒崎恒一郎さん。
-                  今回はその活動や思いについて伺いました。
-                </p>
-
-                <p>
-                  星浜エリアで活躍する人物を紹介する本企画。第1回では、
-                  <strong>城南記念総合病院の院長</strong>として地域医療に携わりながら、
-                  <strong>私立星浜学園の理事長</strong>として教育の現場にも関わる黒崎恒一郎さんに注目します。
-                </p>
-
-                <p>
-                  病院では、安心して相談できる地域医療の拠点づくりに尽力し、
-                  学校では、落ち着いて学べる環境整備や地域とのつながりを大切にした運営を進めているとのこと。
-                  一見異なる二つの役割ですが、「地域の基盤を支える」という点で共通しているといいます。
-                </p>
-
-                <div class="highlight-box">
-                  <strong>記事内ポイント：</strong>
-                  黒崎さんは、<strong>城南記念総合病院の院長</strong>と
-                  <strong>私立星浜学園の理事長</strong>という二つの立場から、
-                  星浜エリアの暮らしと未来を支える存在として紹介されています。
-                </div>
-
-                <p>
-                  真面目で落ち着いた語り口の中にも、地域への責任感と温かなまなざしが感じられる黒崎さん。
-                  医療と教育の両方に関わるその歩みは、星浜エリアならではの“顔”の一つと言えそうです。
-                </p>
+            <div class="hero-inner">
+              <div class="hero-top">
+                <span class="tag">人物アーカイブ</span>
+                <span class="tag sub">地域特集</span>
+                <span class="tag soft">第1回</span>
               </div>
 
-              <aside class="side-col" aria-label="人物写真とプロフィール">
-                <div class="photo-box">
-                  <img
-                    src="kurosaki.png"
-                    alt="黒崎恒一郎の劇中人物写真"
-                    class="person-photo"
-                  />
-                  <p class="photo-caption">
-                    地域医療と教育の両面で活動する黒崎恒一郎さん
+              <h1 class="hero-title">星浜エリア人物録　第1弾</h1>
+              <p class="stage-label">劇中広報記事</p>
+
+              <div class="hero-grid">
+                <div class="hero-copy">
+                  <div class="name-box">
+                    <h2>黒崎恒一郎</h2>
+                    <p>くろさき こういちろう</p>
+                  </div>
+
+                  <p class="lead">
+                    地域医療と教育、二つの分野で星浜エリアを支える人物として知られる黒崎恒一郎さん。
+                    今回はその活動や思いについて伺いました。
                   </p>
-                  <span class="asset-tag">AI-generated portrait</span>
-                  <p class="photo-fiction-note">
-                    本記事は創作作品に登場する架空取材記事です。人物写真・団体名・肩書・記事本文は演出目的で作成したもので、実在の人物・団体とは関係ありません。
+
+                  <p>
+                    星浜エリアで活動する人物を紹介する本特集。第1弾では、
+                    <strong>城南記念総合病院の院長</strong>として地域医療に携わりながら、
+                    <strong>私立星浜学園の理事長</strong>として教育の現場にも関わる黒崎恒一郎さんに注目します。
+                  </p>
+
+                  <p>
+                    病院では、安心して相談できる地域医療の拠点づくりに尽力し、
+                    学校では、落ち着いて学べる環境整備や地域とのつながりを大切にした運営を進めているとのこと。
+                    一見異なる二つの役割ですが、「地域の基盤を支える」という点で共通しているといいます。
+                  </p>
+
+                  <div class="highlight-box">
+                    <strong>ポイント：</strong>
+                    黒崎さんは、<strong>城南記念総合病院の院長</strong>と
+                    <strong>私立星浜学園の理事長</strong>という二つの立場から、
+                    星浜エリアの暮らしと未来を支える存在として知られています。
+                  </div>
+
+                  <p>
+                    真面目で落ち着いた語り口の中にも、地域への責任感と温かなまなざしが感じられる黒崎さん。
+                    医療と教育の両方に関わるその歩みは、星浜エリアならではの“顔”の一つと言えそうです。
                   </p>
                 </div>
 
-                <div class="profile-card">
-                  <h3>プロフィール</h3>
-                  <ul>
-                    <li>城南記念総合病院　院長</li>
-                    <li>私立星浜学園　理事長</li>
-                  </ul>
-                  <p>
-                    星浜エリアを拠点に、医療と教育の両面から地域に貢献。
-                    落ち着いた人柄と幅広い視野で、多方面から信頼を集めている。
-                  </p>
-                </div>
-              </aside>
+                <aside class="side-col" aria-label="人物写真とプロフィール">
+                  <div class="photo-box">
+                    <img
+                      src="kurosaki.png"
+                      alt="黒崎恒一郎の劇中人物写真"
+                      class="person-photo"
+                    />
+
+                    <div class="photo-meta">
+                      <p class="photo-caption">
+                        地域医療と教育の両面で活動する黒崎恒一郎さん
+                      </p>
+
+                      <span class="asset-tag">AI-generated portrait</span>
+
+                      <p class="photo-fiction-note">
+                        本記事は創作作品に登場する架空取材記事です。
+                        人物写真・団体名・肩書・記事本文は演出目的で作成したもので、
+                        実在の人物・団体とは関係ありません。
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="profile-card">
+                    <h3>プロフィール</h3>
+                    <ul>
+                      <li>城南記念総合病院　院長</li>
+                      <li>私立星浜学園　理事長</li>
+                    </ul>
+                    <p>
+                      星浜エリアを拠点に、医療と教育の両面から地域に貢献。
+                      落ち着いた人柄と幅広い視野で、多方面から信頼を集めている。
+                    </p>
+                  </div>
+                </aside>
+              </div>
             </div>
           </section>
 
           <section class="section body" id="interview">
-            <p class="stage-label">劇中広報記事</p>
             <h2 class="section-title">ちょこっとインタビュー</h2>
+            <p class="section-note-label">劇中広報記事</p>
 
             <div class="qa-list">
               <div class="qa-item">
@@ -630,6 +725,17 @@
               </div>
             </div>
           </section>
+
+          <section class="section closing-note" id="notice">
+            <h2 class="section-title">掲載注記</h2>
+
+            <div class="fiction-card">
+              <strong>本記事は創作作品内の演出ページです。</strong><br />
+              本記事は創作作品に登場する架空取材記事です。
+              人物写真・団体名・肩書・記事本文は演出目的で作成したもので、
+              実在の人物・団体・地域広報・医療機関・教育機関とは関係ありません。
+            </div>
+          </section>
         </article>
       </div>
     </main>
@@ -637,11 +743,13 @@
     <footer class="footer">
       <div class="container footer-inner">
         <span class="footer-brand">© 星浜ローカル・クロニクル</span>
+
         <span class="fiction-note">
           ※本記事は創作作品に登場する架空取材記事です。人物写真・団体名・肩書・記事本文は演出目的で作成したもので、実在の人物・団体とは関係ありません。
         </span>
+
         <span class="fiction-note">
-          ※本ページはARG作品内の演出用ページです。実在の地域広報誌、地方紙、医療機関、教育機関、人物紹介記事ではありません。
+          ※人物・施設・風景等の画像はAI生成画像または加工画像を含みます。実在の人物・団体・施設・地域広報誌とは関係ありません。
         </span>
       </div>
     </footer>
